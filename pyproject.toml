@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bot-vturb-extrator"
+version = "0.1.0"
+description = ""
+authors = ["Samuel Sublate <samuelsublate.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+selenium = "^4.29.0"
+webdriver-manager = "^4.0.2"
+python-dotenv = "^1.0.1"
+tinydb = "^4.8.2"
+fastapi = "^0.115.11"
+uvicorn = "^0.34.0"
+markdown2 = "^2.5.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
