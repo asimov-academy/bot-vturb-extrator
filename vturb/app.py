@@ -167,7 +167,7 @@ def main():
 
                 # Re-coleta a lista de vídeos
                 log("Atualizando lista de vídeos disponíveis...", LogType.STEP)
-                browser.wait(3)
+                browser.wait(5)
                 updated_videos = browser.find_elements_by_xpath("//tr[td[contains(@title, 'VSL') and contains(@title, 'IA')]]")
                 log(f"Vídeos disponíveis no momento: {len(updated_videos)}", LogType.INFO)
 
