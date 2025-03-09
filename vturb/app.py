@@ -128,7 +128,7 @@ def main():
 
             log("Clicando duas vezes na pasta...", LogType.STEP)
             start_timer("folder_click")
-            browser.double_click(current_folder)
+            current_folder.click()
             log("Clique duplo realizado", LogType.SUCCESS, show_time=True, operation_name="folder_click")
 
             # Verifica se existe videos dentro da pasta
@@ -167,7 +167,7 @@ def main():
 
                 # Re-coleta a lista de vídeos
                 log("Atualizando lista de vídeos disponíveis...", LogType.STEP)
-                browser.wait(5)
+                browser.wait(3)
                 updated_videos = browser.find_elements_by_xpath("//tr[td[contains(@title, 'VSL') and contains(@title, 'IA')]]")
                 log(f"Vídeos disponíveis no momento: {len(updated_videos)}", LogType.INFO)
 
@@ -204,7 +204,7 @@ def main():
 
                 log("Clicando duas vezes no vídeo...", LogType.STEP)
                 start_timer("video_click")
-                browser.double_click(video_current)
+                video_current.click()
                 browser.wait(2)
                 log("Clique duplo realizado", LogType.SUCCESS, show_time=True, operation_name="video_click")
 
@@ -216,7 +216,7 @@ def main():
                     log("Falha ao acessar a página do vídeo. Tentando clicar novamente...", LogType.WARNING)
                     try:
                         video_current = browser.find_elements_by_xpath("//tr[td[contains(@title, 'VSL') and contains(@title, 'IA')]]")[video_index]
-                        browser.double_click(video_current)
+                        video_current.click()
                         log("Clique duplo realizado novamente.", LogType.INFO, indent_level=1)
                     except:
                         log("Falha ao tentar clicar no vídeo pela segunda vez.", LogType.ERROR, indent_level=1)
