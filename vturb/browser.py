@@ -11,12 +11,19 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Browser:
-    def __init__(self, headless=False):
+    def __init__(self, headless=False, download_path="/home/samuel/Downloads"):
         self.headless = headless
         self.driver = None
         self.options = Options()
         if self.headless:
             self.options.add_argument("--headless")
+            
+        self.options.add_experimental_option("prefs", {
+            "download.default_directory": download_path,
+            "download.prompt_for_download": False,
+            "download.directory_upgrade": True,
+            "safebrowsing.enabled": True
+        })
 
     def open(self):
         self.driver = webdriver.Chrome(

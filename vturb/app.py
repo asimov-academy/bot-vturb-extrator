@@ -290,6 +290,7 @@ def main():
                         log("Segunda tentativa de abrir o dropdown realizada.", LogType.INFO)
                     except:
                         log("Falha na segunda tentativa de abrir o dropdown.", LogType.ERROR)
+                        raise Exception(f"ERRO ao selecionar o dropdown: {str(e)}")
 
                 # clica em utm_content
                 log("Tentando selecionar a opção utm_content...", LogType.STEP)
@@ -299,6 +300,7 @@ def main():
                     log("Opção utm_content selecionada com sucesso.", LogType.SUCCESS, show_time=True, operation_name="utm_select")
                 except Exception as e:
                     log(f"ERRO ao selecionar utm_content: {str(e)}", LogType.ERROR)
+                    raise Exception(f"ERRO ao selecionar utm_content: {str(e)}")
 
                 browser.wait(2)
                 
