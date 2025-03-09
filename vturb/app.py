@@ -308,7 +308,7 @@ def main():
                 log("Tentando abrir o menu de download de métricas...", LogType.STEP)
                 start_timer("download_menu")
                 try:
-                    browser.wait_for_element("//button[strong[contains(text(), 'Baixar Métricas')]]").click()
+                    browser.wait_for_element("//button[strong[contains(text(), 'Baixar Métricas') or contains(text(), 'Download Metrics')]]").click()
                     log("Menu de 'Baixar Métricas' aberto com sucesso.", LogType.SUCCESS, show_time=True, operation_name="download_menu")
                 except Exception as e:
                     log(f"ERRO ao abrir menu de 'Baixar Métricas': {str(e)}", LogType.ERROR)
