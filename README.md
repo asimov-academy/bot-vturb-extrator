@@ -60,7 +60,21 @@ O diagrama abaixo ilustra o fluxo de operação da automação:
 |   ├── logger.py               # Utilitários de log
 |   ├── main.py                 # Script principal de execução do bot
 |   └── api.py                  # Implementação FastAPI
+└── .env                        # Arquivo de variáveis de ambiente (não incluído no repositório)
 ```
+
+## Configuração
+
+### Variáveis de Ambiente
+
+Para o funcionamento correto da aplicação, é necessário criar um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+
+```
+EMAIL_LOGIN=seu_email@exemplo.com
+PASSWORD_LOGIN=sua_senha
+```
+
+Estas credenciais são utilizadas pelo bot para autenticar-se na plataforma VTurb.
 
 ## Uso da API
 
