@@ -167,6 +167,7 @@ def main():
 
                 # Re-coleta a lista de vídeos
                 log("Atualizando lista de vídeos disponíveis...", LogType.STEP)
+                browser.wait(3)
                 updated_videos = browser.find_elements_by_xpath("//tr[td[contains(@title, 'VSL') and contains(@title, 'IA')]]")
                 log(f"Vídeos disponíveis no momento: {len(updated_videos)}", LogType.INFO)
 
@@ -178,8 +179,6 @@ def main():
                         parts = uv_text.split(" ")
                         if len(parts) >= 2:
                             views_downloads = parts[-2:]
-                            views = format_number(views_downloads[-2])
-                            downloads = format_number(views_downloads[-1])
                             video_name = " ".join(parts[:-2])
                             log(f"Vídeo {i2+1}: '{video_name}'", LogType.INFO, indent_level=1)
                         else:
