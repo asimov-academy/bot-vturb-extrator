@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Samuel Sublate <samuelsublate.dev@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "bot_vturb_extrator" }]
 
 
 [tool.poetry.dependencies]
